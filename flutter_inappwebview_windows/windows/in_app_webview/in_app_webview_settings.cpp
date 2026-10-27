@@ -46,6 +46,7 @@ namespace flutter_inappwebview_plugin
     generalAutofillEnabled = get_fl_map_value(encodableMap, "generalAutofillEnabled", generalAutofillEnabled);
     passwordAutosaveEnabled = get_fl_map_value(encodableMap, "passwordAutosaveEnabled", passwordAutosaveEnabled);
     pinchZoomEnabled = get_fl_map_value(encodableMap, "pinchZoomEnabled", pinchZoomEnabled);
+    pageZoom = get_fl_map_value(encodableMap, "pageZoom", pageZoom);
     allowsBackForwardNavigationGestures = get_fl_map_value(encodableMap, "allowsBackForwardNavigationGestures", allowsBackForwardNavigationGestures);
     hiddenPdfToolbarItems = get_fl_map_value(encodableMap, "hiddenPdfToolbarItems", hiddenPdfToolbarItems);
     reputationCheckingRequired = get_fl_map_value(encodableMap, "reputationCheckingRequired", reputationCheckingRequired);
@@ -81,6 +82,7 @@ namespace flutter_inappwebview_plugin
       {"generalAutofillEnabled", generalAutofillEnabled},
       {"passwordAutosaveEnabled", passwordAutosaveEnabled},
       {"pinchZoomEnabled", pinchZoomEnabled},
+      {"pageZoom", pageZoom},
       {"allowsBackForwardNavigationGestures", allowsBackForwardNavigationGestures},
       {"hiddenPdfToolbarItems", hiddenPdfToolbarItems},
       {"reputationCheckingRequired", reputationCheckingRequired},

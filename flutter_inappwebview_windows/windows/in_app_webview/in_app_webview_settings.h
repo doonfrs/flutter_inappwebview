@@ -37,6 +37,7 @@ namespace flutter_inappwebview_plugin
     bool generalAutofillEnabled = true;
     bool passwordAutosaveEnabled = false;
     bool pinchZoomEnabled = true;
+    double pageZoom = 1.0;
     bool allowsBackForwardNavigationGestures = true;
     int64_t hiddenPdfToolbarItems = COREWEBVIEW2_PDF_TOOLBAR_ITEMS::COREWEBVIEW2_PDF_TOOLBAR_ITEMS_NONE;
     bool reputationCheckingRequired = true;

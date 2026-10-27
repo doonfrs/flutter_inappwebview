@@ -272,6 +272,12 @@ namespace flutter_inappwebview_plugin
       }
     }
 
+    // pageZoom maps to the controller's ZoomFactor (the same zoom the user
+    // changes with Ctrl+wheel), so it scales the layout like browser zoom.
+    if (settings->pageZoom > 0) {
+      failedLog(webViewController->put_ZoomFactor(settings->pageZoom));
+    }
+
     if (auto webViewController2 = webViewController.try_query<ICoreWebView2Controller2>()) {
       if (settings->transparentBackground) {
         webViewController2->put_DefaultBackgroundColor({ 0, 255, 255, 255 });
@@ -3048,6 +3054,10 @@ namespace flutter_inappwebview_plugin
           webView2Settings9->put_IsNonClientRegionSupportEnabled(newSettings->nonClientRegionSupportEnabled);
         }
       }
+    }
+
+    if (fl_map_contains_not_null(newSettingsMap, "pageZoom") && settings->pageZoom != newSettings->pageZoom && newSettings->pageZoom > 0) {
+      failedLog(webViewController->put_ZoomFactor(newSettings->pageZoom));
     }
 
     if (auto webViewController2 = webViewController.try_query<ICoreWebView2Controller2>()) {
